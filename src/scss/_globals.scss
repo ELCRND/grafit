@@ -1,0 +1,96 @@
+@use "helpers" as *;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  // outline: 2px solid green;
+}
+
+html {
+  font-size: vw(16px, 1400);
+
+  @include tablet {
+    font-size: vw(16px, 1280);
+  }
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+  background: var(--color-black);
+  color: var(--color-white);
+  position: relative;
+  line-height: 140%;
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(0deg, #ffa200 0%, rgba(254, 63, 3, 0.9) 100%);
+    border-radius: rem(16);
+  }
+
+  &::-webkit-scrollbar {
+    width: rem(8);
+  }
+}
+
+main {
+  overflow-x: hidden;
+  flex-grow: 1;
+}
+
+a,
+button,
+label,
+input,
+details,
+summary,
+textarea,
+select,
+svg,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: none;
+}
+
+img {
+  width: 100%;
+}
+
+.custom-scroll {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 18px;
+  height: 18px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: red !important;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: red !important;
+  border-radius: 10px;
+}
+
+/* Скрываем стрелки */
+.custom-scroll::-webkit-scrollbar-button {
+  display: none !important;
+}
