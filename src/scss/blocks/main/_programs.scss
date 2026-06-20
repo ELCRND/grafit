@@ -1,0 +1,125 @@
+@use "../../helpers" as *;
+
+.programs {
+    padding-block: rem(0) rem(70);
+
+    &__container {
+        display: flex;
+        gap: rem(20);
+    }
+}
+
+.program {
+    flex: 1 1 100%;
+    padding: rem(40);
+    border-radius: rem(14);
+    display: flex;
+    flex-direction: column;
+
+    &--black {
+        border: rem(2) solid rgba(255, 255, 255, 0.6);
+        color: var(--color-white);
+        position: relative;
+        overflow: hidden;
+
+        box-shadow:
+        // 0 0 rem(20) rem(12) rgba(0, 0, 0, 0.7),
+        // 0 0 0 rem(8) #222222,
+        // 0 0 0 8px rgba(255, 255, 255, 0.15),
+            inset 0 0 rem(14) rem(2) rgba(255, 255, 255, 0.6);
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                120deg,
+                rgba(255, 255, 255, 0.5) 5%,
+                rgba(255, 255, 255, 0) 15%,
+                rgba(255, 255, 255, 0.1) 30%,
+                rgba(255, 255, 255, 0) 50%,
+                rgba(255, 255, 255, 0.2) 70%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .program__action {
+            border: rem(1) solid var(--color-gray);
+            box-shadow:
+                rem(-8) rem(-6) rem(16) rgba(0, 0, 0, 0.6) inset,
+                rem(4) rem(2) rem(10) rgba(0, 0, 0, 0.35) inset;
+        }
+    }
+
+    &--white {
+        color: var(--color-black);
+
+        background: linear-gradient(211deg, rgba(255, 255, 255, 0.95) 40%, rgba(245, 245, 255, 0.6));
+        position: relative;
+        overflow: hidden;
+
+        .program__action {
+            box-shadow: rem(4) rem(4) rem(12) rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: rem(40);
+        line-height: 120%;
+    }
+
+    &__description {
+        margin-block: rem(24) rem(40);
+    }
+
+    &__action {
+        width: rem(280);
+        height: rem(60);
+        margin-top: auto;
+    }
+}
+
+@include mobile {
+    .programs {
+        padding-block: rem(30) rem(60);
+
+        &__container {
+            flex-direction: column;
+            // gap: rem(20);
+        }
+    }
+
+    .program {
+        padding: rem(20) rem(20) rem(36) rem(20);
+
+        &--black {
+            .program__action {
+            }
+        }
+
+        &--white {
+            .program__action {
+            }
+        }
+
+        &__title {
+            font-size: rem(24);
+        }
+
+        &__description {
+            margin-block: rem(16) rem(30);
+        }
+
+        &__action {
+            align-self: center;
+            // width: rem(280);
+            // height: rem(60);
+            // margin-top: auto;
+        }
+    }
+}

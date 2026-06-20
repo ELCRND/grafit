@@ -34,6 +34,7 @@
   &.scrolled {
     translate: 0 -68%;
     transition: translate var(--transition-duration) ease;
+    border-bottom: 1px solid var(--color-gray);
 
     .header__top {
       scale: 1 0.8;
@@ -233,11 +234,19 @@
     text-transform: uppercase;
     perspective: 500px;
 
-    @include hover {
+    &:hover {
       color: var(--color-yellow);
 
       & > svg {
         stroke: var(--color-yellow);
+      }
+    }
+
+    &:active {
+      color: var(--color-white);
+
+      & > svg {
+        stroke: var(--color-white);
       }
     }
 
@@ -262,7 +271,7 @@
     opacity: 0;
     transition:
       grid-template-rows var(--transition-duration),
-      opacity var(--transition-duration) ease 0.2s;
+      opacity var(--transition-duration) ease 0.3s;
   }
 
   &__body {
@@ -619,6 +628,7 @@
       bottom: 0;
       left: 0;
       z-index: 2222;
+      overflow: hidden;
       translate: 0 -100%;
       transition:
         opacity var(--transition-duration) ease 0.1s,
@@ -627,6 +637,34 @@
       &--open {
         opacity: 1;
         translate: 0 100%;
+      }
+
+      &::before {
+        content: "";
+        width: 95%;
+        aspect-ratio: 1 / 0.2;
+        border-radius: 40%;
+        background: linear-gradient(rgba(210, 210, 210, 0.3), transparent);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        translate: -50% 70%;
+        filter: blur(40px);
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      &::after {
+        content: none;
+        width: 80%;
+        height: 3px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.75), transparent);
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        translate: -50% 0;
+        scale: 1 1.4;
       }
     }
 
@@ -785,8 +823,19 @@
       border-bottom: 1px solid var(--color-white);
       font-size: rem(22);
 
-      @include hover {
+      &:hover {
+        color: var(--color-white);
+
         & > svg {
+          color: var(--color-white);
+        }
+      }
+
+      &:active {
+        color: var(--color-yellow);
+
+        & > svg {
+          color: var(--color-yellow);
         }
       }
 
@@ -812,6 +861,7 @@
     &__list {
       height: fit-content;
       padding-left: 0;
+      display: block;
     }
 
     &__item {

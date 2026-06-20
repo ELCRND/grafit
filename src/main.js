@@ -1,4 +1,5 @@
 import { Header } from "./js/Header";
+import { paintingsSlider } from "./js/Sliders";
 import "./scss/main.scss";
 
 window.addEventListener("load", () => {
@@ -15,6 +16,8 @@ window.addEventListener("load", () => {
     );
 
   new Header();
+
+  paintingsSlider();
 });
 
 window.addEventListener("scroll", () => {
