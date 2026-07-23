@@ -1,7 +1,7 @@
 @use "../../helpers" as *;
 
 .paintings {
-    padding-block: rem(80) rem(70);
+    // padding-block: rem(80) rem(70);
 
     &__container {
     }
@@ -37,14 +37,14 @@
     }
 
     &__text {
-        flex: 1 1 50%;
+        flex: 1 1 49.5%;
         padding-block: rem(40);
         display: flex;
         flex-direction: column;
     }
 
     &__gallery {
-        flex: 1 1 50%;
+        flex: 1 1 50.5%;
         padding-right: rem(60);
         padding-block: rem(40);
         overflow: hidden;
@@ -71,6 +71,9 @@
     }
 
     &__swiper {
+        border-radius: rem(14);
+        padding-inline: rem(6);
+
         &-controls {
             display: flex;
             flex-direction: column;
@@ -78,7 +81,7 @@
             position: absolute;
             top: 50%;
             right: 0;
-            translate: 0% -50%;
+            translate: rem(-5) -50%;
             z-index: 1;
         }
 
@@ -132,12 +135,13 @@
         width: rem(266);
         height: rem(60);
         margin-top: rem(24);
+        translate: rem(5) 0;
     }
 }
 
 @include mobile {
     .paintings {
-        padding-block: rem(30) rem(60);
+        // padding-block: rem(30) rem(60);
 
         &__container {
         }
@@ -259,6 +263,7 @@
             }
 
             .swiper-wrapper {
+                overflow: hidden;
             }
 
             .swiper-slide {

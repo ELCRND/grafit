@@ -1,0 +1,262 @@
+@use "../helpers" as *;
+
+.artists {
+    &__container {
+    }
+
+    &__title {
+    }
+
+    &__list {
+        margin-top: rem(40);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: rem(20);
+
+        &-item {
+            flex: 1 1 rem(424);
+        }
+    }
+
+    &__actions {
+        margin-top: rem(36);
+        display: flex;
+        justify-content: flex-end;
+        gap: rem(24);
+
+        a {
+            height: rem(60);
+            display: flex;
+            gap: rem(12);
+
+            &:first-of-type {
+                width: rem(320);
+            }
+            &:last-of-type {
+                width: rem(360);
+            }
+
+            img {
+                width: rem(24);
+            }
+        }
+    }
+}
+
+.artist-card {
+    height: 100%;
+
+    position: relative;
+
+    &__link {
+        height: 100%;
+        padding-block: rem(24);
+        border: rem(1) solid var(--color-white);
+        border-radius: rem(14);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        &:hover {
+            box-shadow: 0 0 rem(24) var(--color-gray) inset;
+
+            .artist-card__image {
+                img {
+                    box-shadow: 0 0 rem(10) var(--color-gray);
+                }
+            }
+
+            .artist-card__arrow {
+                svg {
+                    stroke: var(--color-gray);
+                }
+            }
+        }
+
+        &:active {
+            .artist-card__image {
+                img {
+                }
+            }
+
+            .artist-card__arrow {
+                svg {
+                    stroke: var(--color-white);
+                }
+            }
+        }
+    }
+
+    &__name {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: rem(32);
+        line-height: 130%;
+        color: var(--color-white);
+    }
+
+    &__arrow {
+        position: absolute;
+        top: rem(100);
+        right: rem(16);
+
+        svg {
+            width: rem(34);
+            transition: stroke var(--transition-duration) ease;
+        }
+
+        span {
+            display: none;
+        }
+    }
+
+    &__image {
+        @include flex-center;
+        width: 100%;
+        margin-block: rem(20) rem(16);
+        padding: rem(24);
+        border: rem(2) solid var(--color-white);
+        border-radius: rem(14);
+        background-color: var(--color-black);
+
+        img {
+            width: rem(196);
+            border-radius: 50%;
+            transition: box-shadow var(--transition-duration) ease;
+        }
+    }
+
+    &__description {
+        margin-block: auto;
+        padding-inline: rem(24);
+        // font-size: rem(16);
+        // line-height: 140%;
+        // color: var(--color-white);
+    }
+}
+
+@include mobile {
+    .artists {
+        &__container {
+            padding-inline: 0;
+        }
+
+        &__title {
+            padding-inline: rem(20);
+        }
+
+        &__list {
+            margin-top: rem(24);
+            padding-inline: rem(20);
+            flex-wrap: nowrap;
+            gap: rem(10);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            &-item {
+                flex: 1 0 100%;
+
+                scroll-snap-align: center;
+            }
+        }
+
+        &__actions {
+            padding-inline: rem(20);
+            flex-direction: column;
+            align-items: center;
+
+            a {
+                &:first-of-type {
+                }
+                &:last-of-type {
+                    width: rem(320);
+                }
+
+                img {
+                }
+            }
+        }
+    }
+
+    .artist-card {
+        &__link {
+            padding: rem(16) rem(20) rem(24) rem(20);
+
+            &:hover {
+                box-shadow: none;
+
+                .artist-card__image {
+                    img {
+                        box-shadow: none;
+                    }
+                }
+
+                .artist-card__arrow {
+                    svg {
+                        stroke: var(--color-yellow);
+                    }
+                }
+            }
+
+            &:active {
+                box-shadow: 0 0 rem(24) var(--color-gray) inset;
+                .artist-card__image {
+                    img {
+                        box-shadow: 0 0 rem(10) var(--color-gray) inset;
+                    }
+                }
+
+                .artist-card__arrow {
+                    svg {
+                        stroke: var(--color-yellow);
+                    }
+                }
+            }
+        }
+
+        &__name {
+            font-size: rem(20);
+            align-self: flex-start;
+        }
+
+        &__arrow {
+            top: rem(16);
+            right: rem(20);
+            display: flex;
+            align-items: center;
+            gap: rem(6);
+
+            svg {
+                width: rem(20);
+                stroke: var(--color-yellow);
+            }
+
+            span {
+                font-family: var(--second-family);
+                font-size: rem(13);
+                color: var(--color-yellow);
+                display: inline;
+            }
+        }
+
+        &__image {
+            margin-block: rem(12) rem(8);
+            padding: rem(16);
+
+            img {
+            }
+        }
+
+        &__description {
+            padding-inline: 0;
+        }
+    }
+}

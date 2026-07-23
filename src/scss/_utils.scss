@@ -123,7 +123,10 @@
 }
 
 .u-section--head {
+  padding-block: rem(75);
+
   @include mobile {
+    padding-block: rem(30) rem(60);
     position: relative;
     overflow: hidden;
 

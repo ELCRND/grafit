@@ -1,7 +1,7 @@
 @use "../../helpers" as *;
 
 .services {
-    padding-block: rem(60) rem(150);
+    // padding-block: rem(60) rem(150);
 
     &__container {
     }
@@ -56,7 +56,7 @@
             background-color: var(--color-black--light);
 
             &::after {
-                scale: 1.2;
+                // scale: 1.2;
             }
         }
 
@@ -75,7 +75,8 @@
 .services-contact {
     margin-top: rem(40);
     padding: rem(60);
-    border: 1px solid var(--color-white);
+    // border: rem(1) solid var(--color-white);
+    box-shadow: 0 0 0 rem(1) var(--color-white);
     border-radius: rem(14);
     display: flex;
     flex-direction: column;
@@ -88,9 +89,13 @@
         inset: 0;
         z-index: 0;
 
+        // background: #c01a22;
+        // background: radial-gradient(at right bottom, #f0b616, #e51f16);
+
         img {
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
+            // display: none;
         }
     }
 
@@ -98,14 +103,15 @@
         position: absolute;
         inset: 0;
         z-index: 1;
+        scale: 2;
     }
 
     &__svg {
-        width: rem(1515);
+        width: rem(960);
         position: absolute;
-        top: 0;
+        bottom: 0;
         right: 0;
-        translate: 35% -25%;
+        // translate: 35% -25%;
         z-index: 2;
     }
 
@@ -117,15 +123,17 @@
         text-transform: uppercase;
         color: var(--color-white);
         z-index: 3;
+        text-shadow: rem(1) rem(2) rem(4) rgba(0, 0, 0, 0.25);
     }
 
     &__description {
         max-width: rem(800);
         font-weight: 500;
         font-size: rem(20);
-        line-height: 130%;
+        line-height: 125%;
         color: var(--color-white);
         z-index: 3;
+        text-shadow: rem(1) rem(2) rem(4) rgba(0, 0, 0, 0.35);
     }
 
     &__action {
@@ -137,7 +145,7 @@
 
 @include mobile {
     .services {
-        padding-block: rem(30) rem(60);
+        // padding-block: rem(30) rem(60);
         &__container {
         }
 
@@ -205,19 +213,19 @@
 
         &__gradient {
             img {
-                min-width: 170%;
+                // min-width: 170%;
             }
         }
 
         &__svg {
-            width: auto;
-            inset: 0;
-            translate: 0 0;
+            // width: auto;
+            // inset: 0;
+            // translate: 0 0;
 
             img {
-                object-fit: cover;
-                height: 100%;
-                object-position: bottom;
+                // object-fit: cover;
+                // height: 100%;
+                // object-position: bottom;
             }
         }
 

@@ -1,7 +1,7 @@
 @use "../helpers" as *;
 
 .portfolio {
-    padding-block: rem(0) rem(70);
+    // padding-block: rem(0) rem(70);
 
     &__title {
     }
@@ -34,6 +34,7 @@
 }
 
 .portfolio-item {
+    display: block;
     padding: rem(16);
     border: rem(1) solid var(--color-white);
     border-radius: rem(14);
@@ -53,6 +54,22 @@
 
         .portfolio-item__image {
             border-color: var(--color-orange--light);
+        }
+    }
+
+    &:active {
+        border-color: var(--color-white);
+
+        .portfolio-item__title {
+            color: var(--color-white);
+        }
+
+        .portfolio-item__icon {
+            stroke: var(--color-white);
+        }
+
+        .portfolio-item__image {
+            border-color: var(--color-white);
         }
     }
 
@@ -88,7 +105,7 @@
 
 @include mobile {
     .portfolio {
-        padding-block: rem(30) rem(0);
+        // padding-block: rem(30) rem(60);
 
         &__container {
             padding-right: 0;
@@ -136,7 +153,7 @@
     }
 
     .portfolio-item {
-        padding: rem(16);
+        padding: rem(12);
         // border: rem(1) solid var(--color-white);
         // border-radius: rem(14);
         background-color: #171717;

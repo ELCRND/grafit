@@ -36,6 +36,10 @@ body {
   }
 }
 
+p {
+  line-height: 140%;
+}
+
 main {
   overflow-x: hidden;
   flex-grow: 1;
@@ -90,7 +94,15 @@ img {
   border-radius: 10px;
 }
 
-/* Скрываем стрелки */
 .custom-scroll::-webkit-scrollbar-button {
   display: none !important;
+}
+
+*:focus-visible {
+  outline: rem(2) solid var(--color-yellow) !important;
+  outline-offset: rem(4);
+}
+
+.pswp__img {
+  border-radius: rem(14);
 }

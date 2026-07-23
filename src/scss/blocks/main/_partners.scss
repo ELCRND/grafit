@@ -1,0 +1,86 @@
+@use "../../helpers" as *;
+
+.partners {
+    &__container {
+        max-width: none;
+        padding-inline: 0;
+    }
+
+    &__title {
+        max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+        margin-inline: auto;
+        padding-inline: var(--container-padding-x);
+    }
+
+    &__swiper {
+        margin-top: rem(40);
+        mask-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0) 0.2%,
+            rgba(0, 0, 0, 1) 15%,
+            rgba(0, 0, 0, 1) 85%,
+            rgba(0, 0, 0, 0) 99.8%
+        );
+    }
+
+    .swiper {
+        padding-inline: 0 !important;
+        transition-timing-function: linear !important;
+    }
+
+    .swiper-wrapper {
+        padding-inline: 0 !important;
+        display: flex;
+        transition-timing-function: linear !important;
+    }
+
+    .swiper-slide {
+        @include flex-center;
+        width: rem(160) !important;
+        height: rem(160) !important;
+        margin-right: rem(20) !important;
+        background-color: #e7e7e7;
+        border-radius: rem(14);
+        overflow: hidden;
+    }
+
+    &__image {
+        width: rem(132);
+    }
+}
+
+@include mobile {
+    .partners {
+        &__container {
+        }
+
+        &__title {
+        }
+
+        &__swiper {
+            margin-top: rem(24);
+            mask-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0) 0.2%,
+                rgba(0, 0, 0, 1) 15%,
+                rgba(0, 0, 0, 1) 85%,
+                rgba(0, 0, 0, 0) 99.8%
+            );
+        }
+
+        .swiper {
+        }
+
+        .swiper-wrapper {
+        }
+
+        .swiper-slide {
+            width: rem(108) !important;
+            height: rem(108) !important;
+        }
+
+        &__image {
+            width: rem(80);
+        }
+    }
+}

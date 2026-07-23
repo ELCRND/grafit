@@ -1,0 +1,223 @@
+@use "../../helpers" as *;
+
+.stages {
+    &__container {
+    }
+
+    &__title {
+    }
+
+    &__list {
+        margin-top: rem(40);
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+
+        &-item {
+        }
+    }
+}
+
+.stages-item {
+    border: rem(1) solid var(--color-white);
+    border-radius: rem(14);
+    position: relative;
+    overflow: hidden;
+    text-shadow: rem(1) rem(2) rem(4) rgba(0, 0, 0, 0.25);
+
+    &:has(.stages-item__details[open]) {
+        .stages-item__bg,
+        .stages-item__noise {
+            opacity: 1;
+        }
+    }
+
+    &__bg,
+    &__noise {
+        opacity: 0;
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        transition: opacity var(--transition-duration) ease 0.1s;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__noise {
+        scale: 2.5;
+    }
+
+    &__details {
+        &[open] {
+            + .stages-item__wrapper {
+                grid-template-rows: 1fr;
+            }
+
+            .stages-item__summary {
+                &::after {
+                    rotate: 0deg;
+                }
+            }
+        }
+    }
+
+    &__summary {
+        padding: rem(24);
+        display: flex;
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: rem(32);
+        line-height: 130%;
+        color: var(--color-white);
+        position: relative;
+        cursor: pointer;
+        outline-offset: rem(-12);
+
+        &::before,
+        &::after {
+            content: "";
+            width: rem(32);
+            height: rem(1);
+            background-color: var(--color-white);
+            position: absolute;
+            top: 50%;
+            right: rem(24);
+            translate: 0 -50%;
+        }
+
+        &::after {
+            rotate: -90deg;
+            transition: rotate var(--transition-duration) ease;
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows var(--transition-duration) ease;
+    }
+
+    &__body {
+        padding: 0 rem(24) 0 rem(24);
+        display: flex;
+        gap: rem(24);
+        overflow: hidden;
+    }
+
+    &__description {
+        max-width: rem(432);
+        margin-block: rem(36);
+        font-weight: 400;
+        font-size: rem(20);
+        color: var(--color-white);
+    }
+
+    &__gallery {
+        margin-block: rem(36);
+        display: flex;
+        gap: rem(24);
+    }
+
+    &__image {
+        width: rem(396);
+        border: rem(1) solid var(--color-white);
+        border-radius: rem(14);
+        overflow: hidden;
+        box-shadow: rem(16) rem(12) rem(25) rgba(0, 0, 0, 0.5);
+        // 0 0 0 rem(8) #222222;
+        // 0 0 0 8px rgba(255, 255, 255, 0.15);
+        // inset rem(4) rem(4) rem(8) rgba(255, 255, 255, 0.4),
+        // inset rem(-4) rem(-4) rem(10) rgba(0, 0, 0, 0.8);
+    }
+}
+
+@include mobile {
+    .stages {
+        padding-block: rem(30) rem(0);
+
+        &__container {
+        }
+
+        &__title {
+        }
+
+        &__list {
+            margin-top: rem(24);
+
+            &-item {
+            }
+        }
+    }
+
+    .stages-item {
+        &:has(.stages-item__details[open]) {
+            .stages-item__bg,
+            .stages-item__noise {
+            }
+        }
+
+        &__bg,
+        &__noise {
+            img {
+            }
+        }
+
+        &__noise {
+        }
+
+        &__details {
+            &[open] {
+                + .stages-item__wrapper {
+                }
+
+                .stages-item__summary {
+                    &::after {
+                    }
+                }
+            }
+        }
+
+        &__summary {
+            padding: rem(20);
+            font-size: rem(18);
+
+            &::before,
+            &::after {
+                width: rem(24);
+                right: rem(20);
+            }
+
+            &::after {
+            }
+        }
+
+        &__wrapper {
+        }
+
+        &__body {
+            padding: 0 rem(20) 0 rem(20);
+            gap: rem(20);
+            flex-direction: column;
+        }
+
+        &__description {
+            margin-block: rem(20) 0;
+            font-size: rem(16);
+        }
+
+        &__gallery {
+            margin-top: 0;
+            margin-block: 0 rem(20);
+            gap: rem(20);
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        &__image {
+            width: rem(240);
+        }
+    }
+}

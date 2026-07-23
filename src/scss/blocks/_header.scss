@@ -11,11 +11,10 @@
   overflow: hidden;
 
   &:has(.menu-level-1__details[open]) {
-    height: 100dvh;
+    inset: 0;
     translate: 0 0 !important;
     background-color: transparent;
-    transition: none;
-    transition: translate 0.2s ease-out;
+    border-bottom: none;
 
     .header__bg {
       translate: 0 0;
@@ -34,7 +33,7 @@
   &.scrolled {
     translate: 0 -68%;
     transition: translate var(--transition-duration) ease;
-    border-bottom: 1px solid var(--color-gray);
+    border-bottom: rem(1) solid var(--color-gray);
 
     .header__top {
       scale: 1 0.8;
@@ -55,7 +54,8 @@
     left: 0;
     z-index: 0;
     translate: 0 -100%;
-    transition: all 0.4s ease-out;
+    transition: translate 0.4s ease-out;
+    // opacity: 0;
   }
 
   &__container {
@@ -166,7 +166,7 @@
     flex: 1 1 100%;
     margin-top: rem(9);
     padding-block: rem(16);
-    border-top: 1px solid var(--color-white);
+    border-top: rem(1) solid var(--color-white);
   }
 
   &__navigation {
@@ -232,7 +232,7 @@
     font-size: rem(15);
     cursor: pointer;
     text-transform: uppercase;
-    perspective: 500px;
+    // perspective: 500px;
 
     &:hover {
       color: var(--color-yellow);
@@ -296,6 +296,13 @@
 
 .menu-level-2 {
   width: rem(440);
+
+  // a:focus-visible,
+  details:focus-visible,
+  summary:focus-visible {
+    outline-offset: rem(-2);
+    // outline: rem(2) solid var(--color-orange) !important;
+  }
 
   // &:has(.menu-level-3__details[open]) {
   //   .menu-level-2__label {
@@ -559,6 +566,7 @@
     padding-top: 0;
     overflow: scroll;
     height: auto;
+    background-color: transparent;
 
     &:has(.header__menu--open) {
       height: 100dvh !important;
@@ -568,12 +576,16 @@
       height: auto;
 
       .header__bg {
+        translate: 0 -100%;
       }
 
       .header__top {
+        // scale: 1 1;
+        // opacity: 1;
       }
 
       .menu-level-1__label {
+        // animation: none !important;
       }
     }
 
@@ -584,6 +596,8 @@
         scale: 1 1;
         opacity: 1;
         padding-block: rem(0);
+        z-index: 11;
+        background-color: var(--color-black);
       }
 
       .header__logo {
@@ -598,6 +612,7 @@
     }
 
     &__bg {
+      background-color: transparent;
     }
 
     &__container {
@@ -610,9 +625,23 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background-color: var(--color-black);
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-black);
+        position: absolute;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 2223;
+      }
     }
 
     &__logo {
+      z-index: 2224;
     }
 
     &__menu {
@@ -631,8 +660,8 @@
       overflow: hidden;
       translate: 0 -100%;
       transition:
-        opacity var(--transition-duration) ease 0.1s,
-        translate 0s ease 0.2s;
+        opacity var(--transition-duration) ease-out 0.2s,
+        translate 0.4s ease-out 0s;
 
       &--open {
         opacity: 1;
@@ -653,19 +682,6 @@
         pointer-events: none;
         z-index: -1;
       }
-
-      &::after {
-        content: none;
-        width: 80%;
-        height: 3px;
-        border-radius: 50%;
-        background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.75), transparent);
-        position: absolute;
-        top: -1px;
-        left: 50%;
-        translate: -50% 0;
-        scale: 1 1.4;
-      }
     }
 
     &__menu-btn {
@@ -677,7 +693,7 @@
       flex-direction: column;
       gap: rem(7);
       position: relative;
-      z-index: 1001;
+      z-index: 2224;
 
       &--open {
         span {
@@ -827,7 +843,7 @@
         color: var(--color-white);
 
         & > svg {
-          color: var(--color-white);
+          stroke: var(--color-white);
         }
       }
 
@@ -835,7 +851,7 @@
         color: var(--color-yellow);
 
         & > svg {
-          color: var(--color-yellow);
+          stroke: var(--color-yellow);
         }
       }
 
