@@ -27,12 +27,11 @@ window.addEventListener("load", async () => {
   }
 
   new Header();
+  new ConsultationForm();
 
   paintingsSlider();
   partnersSlider();
   lettersSlider();
   // photoSwipe();
   reviewsSlider();
-
-  new ConsultationForm();
 });

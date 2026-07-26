@@ -6,18 +6,23 @@
 
 @use "blocks/header";
 
-@use "blocks/main/hero";
-@use "blocks/main/services";
-@use "blocks/main/about";
-@use "blocks/main/advantages";
-@use "blocks/main/programs";
-@use "blocks/main/paintings";
+@use "blocks/mainpage/hero";
+@use "blocks/mainpage/services";
+
+@use "swiper/css";
+@use "swiper/css/navigation";
+@use "swiper/css/effect-fade";
+
+@use "blocks/mainpage/about";
+@use "blocks/mainpage/advantages";
+@use "blocks/mainpage/programs";
+@use "blocks/mainpage/paintings";
 @use "blocks/portfolio";
-@use "blocks/main/stages";
+@use "blocks/mainpage/stages";
 @use "blocks/artists";
-@use "blocks/main/partners";
-// @use "blocks/main/letters";
-@use "blocks/main/reviews";
+@use "blocks/mainpage/partners";
+// @use "blocks/mainpage/letters";
+@use "blocks/mainpage/reviews";
 @use "blocks/consultation";
 
 @use "blocks/footer";

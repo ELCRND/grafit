@@ -1,8 +1,8 @@
 import Swiper from "swiper";
 import { Navigation, Autoplay, EffectFade } from "swiper/modules";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
-import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/effect-fade";
+// import "swiper/css";
 
 export function paintingsSlider() {
   const slider = new Swiper(".paintings__swiper", {
@@ -18,7 +18,7 @@ export function paintingsSlider() {
     },
   });
 
-  slider.init();
+  // slider.init();
 }
 
 export function partnersSlider() {
@@ -36,7 +36,7 @@ export function partnersSlider() {
     },
   });
 
-  slider.init();
+  // slider.init();
 }
 
 export function lettersSlider() {
@@ -62,7 +62,7 @@ export function lettersSlider() {
     },
   });
 
-  slider.init();
+  // slider.init();
 }
 
 export function reviewsSlider() {
@@ -83,5 +83,5 @@ export function reviewsSlider() {
     // },
   });
 
-  slider.init();
+  // slider.init();
 }
