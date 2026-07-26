@@ -1,3 +1,4 @@
+import { ConsultationForm } from "./js/ConsultationForm";
 import { Header } from "./js/Header";
 import { photoSwipe } from "./js/PhotoSwipe";
 import {
@@ -6,22 +7,21 @@ import {
   partnersSlider,
   reviewsSlider,
 } from "./js/Sliders";
-import "./scss/main.scss";
+// import "./scss/main.scss";
 
-window.addEventListener("load", () => {
-  document.querySelectorAll("details").forEach((d) =>
-    d.addEventListener("toggle", (e) => {
-      const content = e.target.nextElementSibling;
+window.addEventListener("load", async () => {
+  try {
+    const { default: cssUrl } = await import("./scss/main.scss?url");
 
-      if (!e.target.open) {
-        content.setAttribute("inert", "");
-        content.querySelectorAll("details").forEach((dd) => (dd.open = false));
-        return;
-      }
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = cssUrl;
+    document.head.appendChild(link);
 
-      content.removeAttribute("inert");
-    }),
-  );
+    console.log("Поздний SCSS загружен:", cssUrl);
+  } catch (err) {
+    console.error("Ошибка загрузки позднего CSS:", err);
+  }
 
   new Header();
 
@@ -30,4 +30,6 @@ window.addEventListener("load", () => {
   lettersSlider();
   photoSwipe();
   reviewsSlider();
+
+  new ConsultationForm();
 });

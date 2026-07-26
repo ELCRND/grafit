@@ -565,7 +565,7 @@
   .header {
     padding-top: 0;
     overflow: scroll;
-    height: auto;
+    height: min-content;
     background-color: transparent;
 
     &:has(.header__menu--open) {
@@ -573,19 +573,14 @@
     }
 
     &:has(.menu-level-1__details[open]) {
-      height: auto;
-
       .header__bg {
         translate: 0 -100%;
       }
 
       .header__top {
-        // scale: 1 1;
-        // opacity: 1;
       }
 
       .menu-level-1__label {
-        // animation: none !important;
       }
     }
 
@@ -658,12 +653,14 @@
       left: 0;
       z-index: 2222;
       overflow: hidden;
+      visibility: hidden;
       translate: 0 -100%;
       transition:
         opacity var(--transition-duration) ease-out 0.2s,
         translate 0.4s ease-out 0s;
 
       &--open {
+        visibility: visible;
         opacity: 1;
         translate: 0 100%;
       }

@@ -1,8 +1,8 @@
 import Swiper from "swiper";
 import "swiper/css";
-import { Navigation, Autoplay, EffectCube } from "swiper/modules";
+import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css/navigation";
-import "swiper/css/effect-cube";
+import "swiper/css/effect-fade";
 
 export function paintingsSlider() {
   const slider = new Swiper(".paintings__swiper", {
@@ -42,6 +42,7 @@ export function lettersSlider() {
     speed: 400,
     centeredSlides: true,
     slidesOffsetBefore: 20,
+    initialSlide: 1,
 
     navigation: {
       nextEl: ".letters__swiper-next",
@@ -52,6 +53,7 @@ export function lettersSlider() {
       768: {
         centeredSlides: false,
         slidesOffsetBefore: 0,
+        initialSlide: 0,
       },
     },
   });
@@ -59,19 +61,19 @@ export function lettersSlider() {
 
 export function reviewsSlider() {
   const slider = new Swiper(".reviews__swiper", {
-    modules: [Navigation, EffectCube],
+    modules: [Navigation, EffectFade],
     // slidesPerView: 1,
-    speed: 400,
-    effect: "cube",
+    speed: 800,
+    effect: "fade",
 
     navigation: {
       nextEl: ".reviews__swiper-next",
       prevEl: ".reviews__swiper-prev",
     },
 
-    cubeEffect: {
-      slideShadows: false, // тени на самих слайдах
-      shadow: false, // главная тень под кубом
-    },
+    // cubeEffect: {
+    //   slideShadows: false,
+    //   shadow: false,
+    // },
   });
 }
