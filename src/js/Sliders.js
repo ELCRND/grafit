@@ -1,8 +1,8 @@
 import Swiper from "swiper";
-import "swiper/css";
 import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import "swiper/css";
 
 export function paintingsSlider() {
   const slider = new Swiper(".paintings__swiper", {
@@ -17,10 +17,12 @@ export function paintingsSlider() {
       prevEl: ".paintings__swiper-prev",
     },
   });
+
+  slider.init();
 }
 
 export function partnersSlider() {
-  const swiper = new Swiper(".partners__swiper", {
+  const slider = new Swiper(".partners__swiper", {
     modules: [Autoplay],
     loop: true,
     slidesPerView: "auto",
@@ -33,6 +35,8 @@ export function partnersSlider() {
       disableOnInteraction: false,
     },
   });
+
+  slider.init();
 }
 
 export function lettersSlider() {
@@ -57,6 +61,8 @@ export function lettersSlider() {
       },
     },
   });
+
+  slider.init();
 }
 
 export function reviewsSlider() {
@@ -76,4 +82,6 @@ export function reviewsSlider() {
     //   shadow: false,
     // },
   });
+
+  slider.init();
 }
