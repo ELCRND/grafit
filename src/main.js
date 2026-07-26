@@ -2,7 +2,7 @@ import { ConsultationForm } from "./js/ConsultationForm";
 
 import { Header } from "./js/Header";
 
-import { photoSwipe } from "./js/PhotoSwipe";
+// import { photoSwipe } from "./js/PhotoSwipe";
 import {
   lettersSlider,
   paintingsSlider,
@@ -31,7 +31,7 @@ window.addEventListener("load", async () => {
   paintingsSlider();
   partnersSlider();
   lettersSlider();
-  photoSwipe();
+  // photoSwipe();
   reviewsSlider();
 
   new ConsultationForm();
