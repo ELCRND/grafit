@@ -77,6 +77,7 @@
     width: rem(147);
     height: rem(70);
     margin-right: auto;
+    display: block;
   }
 
   &__menu {
@@ -431,16 +432,16 @@
       color: var(--color-yellow);
     }
 
-    &::after {
-      content: "";
-      width: rem(24);
-      height: rem(24);
-      background: url(/images/common/arrow.svg);
-      background-size: cover;
-      opacity: 0;
-      translate: 0 -3%;
-      transition: opacity var(--transition-duration) ease;
-    }
+    // &::after {
+    //   content: "";
+    //   width: rem(24);
+    //   height: rem(24);
+    //   background: url(/images/common/arrow.svg);
+    //   background-size: cover;
+    //   opacity: 0;
+    //   translate: 0 -3%;
+    //   transition: opacity var(--transition-duration) ease;
+    // }
 
     &--new {
       display: flex;
@@ -496,14 +497,14 @@
     font-size: rem(20);
     color: var(--color-yellow);
 
-    &::before {
-      content: "";
-      width: rem(24);
-      height: rem(24);
-      background: url(/images/common/arrow.svg);
-      background-size: cover;
-      transition: opacity var(--transition-duration) ease;
-    }
+    // &::before {
+    //   content: "";
+    //   width: rem(24);
+    //   height: rem(24);
+    //   background: url(/images/common/arrow.svg);
+    //   background-size: cover;
+    //   transition: opacity var(--transition-duration) ease;
+    // }
   }
 
   &__btn {
@@ -538,18 +539,18 @@
     color: var(--color-gray);
     position: relative;
 
-    &::before {
-      content: "";
-      width: rem(24);
-      height: rem(24);
-      background: url(/images/common/arrow.svg);
-      background-size: cover;
-      opacity: 0;
-      transition: opacity var(--transition-duration) ease;
-      position: absolute;
-      left: 0;
-      translate: -120% -5%;
-    }
+    // &::before {
+    //   content: "";
+    //   width: rem(24);
+    //   height: rem(24);
+    //   background: url(/images/common/arrow.svg);
+    //   background-size: cover;
+    //   opacity: 0;
+    //   transition: opacity var(--transition-duration) ease;
+    //   position: absolute;
+    //   left: 0;
+    //   translate: -120% -5%;
+    // }
 
     @include hover {
       color: var(--color-yellow);

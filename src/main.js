@@ -1,5 +1,7 @@
 import { ConsultationForm } from "./js/ConsultationForm";
+
 import { Header } from "./js/Header";
+
 import { photoSwipe } from "./js/PhotoSwipe";
 import {
   lettersSlider,
@@ -7,6 +9,7 @@ import {
   partnersSlider,
   reviewsSlider,
 } from "./js/Sliders";
+
 // import "./scss/main.scss";
 
 window.addEventListener("load", async () => {

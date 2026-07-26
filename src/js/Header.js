@@ -25,9 +25,7 @@ export class Header {
 
     this.MENU__BTN.addEventListener("click", () => this._handleClick());
 
-    this.DETAILS = this.HEADER.querySelectorAll(
-      ".menu-level-1__details, .menu-level-2__details",
-    ).forEach((dtl) =>
+    this.DETAILS = this.HEADER.querySelectorAll("details").forEach((dtl) =>
       dtl.addEventListener("toggle", (e) => this._handleChildrensClose(e)),
     );
   }
