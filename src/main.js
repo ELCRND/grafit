@@ -10,7 +10,7 @@ import {
   reviewsSlider,
 } from "./js/Sliders";
 
-import "./scss/main.scss";
+// import "./scss/main.scss";
 
 window.addEventListener("load", async () => {
   try {
