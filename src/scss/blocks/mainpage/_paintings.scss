@@ -117,11 +117,11 @@
         }
 
         .swiper-slide {
-            width: rem(266) !important;
-            margin-right: rem(20);
+            // width: rem(266) !important;
+            // margin-right: rem(20) !important;
 
             &:last-of-type {
-                margin-right: 0;
+                // margin-right: 0;
             }
 
             picture {
@@ -263,21 +263,21 @@
             }
 
             .swiper-wrapper {
-                overflow: hidden;
+                // overflow: hidden;
             }
 
             .swiper-slide {
-                width: 100% !important;
-                display: flex;
-                justify-content: center;
-                margin-right: rem(0);
+                // width: 100% !important;
+                // display: flex;
+                // justify-content: center;
+                // margin-right: rem(0);
 
                 &:last-of-type {
                     // margin-right: 0;
                 }
 
                 picture {
-                    width: rem(320) !important;
+                    // width: rem(320) !important;
                     // border-radius: rem(14);
                     // overflow: hidden;
                 }

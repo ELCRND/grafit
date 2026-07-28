@@ -7,14 +7,20 @@ import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 export function paintingsSlider() {
   const slider = new Swiper(".paintings__swiper", {
     modules: [Navigation],
-    slidesPerView: "auto",
+    // slidesPerView: 1,
     speed: 400,
-    // spaceBetween: 20,
+    spaceBetween: 20,
     // slidesOffsetAfter: 14,
 
     navigation: {
       nextEl: ".paintings__swiper-next",
       prevEl: ".paintings__swiper-prev",
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
     },
   });
 

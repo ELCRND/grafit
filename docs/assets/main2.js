@@ -1,1 +1,0 @@
-var a=""+new URL("main-B7vQDkYX.css",import.meta.url).href;export{a as default};
