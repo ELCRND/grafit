@@ -1,0 +1,1 @@
+var a=""+new URL("main-DmvcRl86.css",import.meta.url).href;export{a as default};
